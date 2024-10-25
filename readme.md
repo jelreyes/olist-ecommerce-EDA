@@ -1,4 +1,4 @@
-#Olist E-Commerce EDA
+# Olist E-Commerce EDA
 
 ## Overview
 This project analyzes a Brazilian e-commerce dataset provided by Olist, which includes transactional data from multiple dimensions, such as order status, pricing, customer location, and product reviews. The goal is to prepare and structure the data for analysis, identify trends, and make recommendations to improve data quality and architecture.
