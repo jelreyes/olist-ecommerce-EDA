@@ -77,11 +77,13 @@ IGNORE 1 ROWS
 ### Data Cleaning
 [```data_cleanup.py```](data_cleanup.py) performs the following data preparation steps:
 
-1. **Column inspection and renaming:** All columns are inspected for data types, with misspelled columns renamed (e.g., product_name_lenght to product_name_length).
-2. **Handling invalid characters:** Identified non-alphanumeric characters in text columns, allowing for review and cleaning as needed.
-3. **Handling duplicates:** Duplicate rows across dataframes are identified and removed.
-4. **Replacing empty strings:** Any cells with empty strings or spaces are replaced with NaN values to standardize missing data handling.
-5. **Geolocation data standardization:** To handle inconsistencies in city names (e.g., special characters in geolocation_city), city names are converted to their closest ASCII equivalents using unidecode, and duplicates are dropped based on geolocation_zip_code_prefix, geolocation_state, and geolocation_city.
+1. **Column inspection and renaming:** All columns are inspected for data types, with misspelled columns renamed to avoid future errors (e.g., product_name_lenght to product_name_length).
+2. **Handling duplicates:** Duplicate rows across dataframes are identified and removed.
+3. **Handling invalid characters:** Identified non-alphanumeric characters in text columns, allowing for review and cleaning as needed.
+   
+    - Any cells with empty strings or spaces are replaced with NaN values to standardize missing data handling.
+   
+    - To handle inconsistencies in city names (e.g., special characters in geolocation_city), city names are converted to their closest ASCII equivalents using unidecode, and duplicates are dropped based on geolocation_zip_code_prefix, geolocation_state, and geolocation_city.
 
 ## Data Analysis
 _To be completed in future stages._
