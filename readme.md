@@ -1,21 +1,38 @@
-# Olist E-Commerce EDA
+# Olist E-Commerce Sales Insights
 
 ## Overview
-This project analyzes a Brazilian e-commerce dataset provided by Olist, which includes transactional data from multiple dimensions, such as order status, pricing, customer location, and product reviews. The goal is to prepare and structure the data for analysis, identify trends, and make recommendations to improve data quality and architecture.
+This project analyzes  the sales performance of Olist, a major online marketplace in Brazil, from 2016-2018. Olist connects small Brazilian businesses to various marketplaces, enabling seamless logistics and delivery to customers. After purchase, customers provide feedback through a satisfaction survey.
 
-## Data Source
-Brazilian E-Commerce Public Dataset by Olist downloaded from [kaggle](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce/data). The following information are also provided by kaggle:
-- This dataset contains information on over 100,000 orders from 2016 to 2018, anonymized and shared by Olist, a major online marketplace in Brazil. The data spans multiple order aspects, including customer feedback and geolocation information.
-- Olist connects small Brazilian businesses to various marketplaces, enabling seamless logistics and delivery to customers. After purchase, customers provide feedback through a satisfaction survey.
+The goal is to **prepare and structure the data for analysis, identify trends, and generate actionable recommendations to enhance Olist's sales performance and data integrity**.
+
+## Dashboard
+This dashboard aggregates sales data, offering insights into key performance indicators (KPIs) such as total sales, order counts, and customer demographics.
+![sales (1)_page-0001](https://github.com/user-attachments/assets/05919302-c2ae-4eff-aa43-c442e569ddb8)
+![Untitled design](https://github.com/user-attachments/assets/456263b4-e170-418c-92f8-d6cefbd2baa4)
+
+## Recommendations
+- **Data quality improvement**: Work with the Data Governance, Database Administrators, and Data Engineering teams to standardize ```geolocation_city data```, reducing duplicates and discrepancies. Implement data cleaning and normalization practices in the database architecture to enhance data accuracy and consistency.
+
+## Future Updates
+This project will continue to evolve with the addition of deeper insights and recommendations based on ongoing data analysis. Future updates will focus on:
+- Analyzing seasonal trends in sales performance.
+- Evaluating the impact of customer feedback on sales.
+
+## Technical Process
+### 1. Tech Stack
+- **Database Management**: **MySQL** is used for efficient data storage and indexing
+- **Data Preparation**: **Python**, along with the **pandas** library, is used for data cleaning and preparation, enabling flexible handling of various data transformations.
+- **Data Visualization**: **Microsoft Power BI** is utilized to create an interactive self-service dashboard that presents key insights in a visually appealing manner.
+
+### 2. Data Source
+Brazilian E-Commerce Public Dataset by Olist downloaded from [kaggle](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce/data):
+- Contains information on over **100,000 orders** from **2016** to **2018**
+- Spans multiple order aspects and transactional data from multiple dimensions, such as order status, pricing, customer location, and product reviews.
 - Note: All company names and partner names in customer reviews have been replaced with fictional names from Game of Thrones.
 
-## Tech Stack
-- **Database**: MySQL (for data loading and indexing)
-- **Data Processing**: Python, pandas
+### 3. Data Preparation
 
-## Data Preparation
-
-### 1. Database Creation
+#### 3.1. Database Creation
 Before loading the data, a database named ```olist``` is created, and tables are set up with appropriate schemas to store each dataset component.
 
 **Query snippet:**
@@ -33,7 +50,7 @@ CREATE TABLE olist.order_customers (
 );	
 ```
 
-### 2. Indexing
+#### 3.2. Indexing
 
 Each table has unique indices to avoid duplicate entries and improve data retrieval.
 
@@ -58,7 +75,7 @@ FOREIGN KEY (`order_id`) REFERENCES `olist`.`orders` (`order_id`);
 
 ```category_name_translation``` table was not foreign-keyed to ```products``` due to some missing ```product_category_name``` values.
 
-### 3. Data Loading
+#### 3.3. Data Loading
 
 Each CSV file is loaded into a separate table within the olist database.
 
@@ -74,7 +91,7 @@ IGNORE 1 ROWS
 (customer_id,customer_unique_id,customer_zip_code_prefix, customer_city, customer_state);
 ```
 
-### Data Cleaning
+#### 3.4. Data Cleaning
 [```data_cleanup.py```](data_cleanup.py) performs the following data preparation steps:
 
 1. **Column inspection and renaming:** All columns are inspected for data types, with misspelled columns renamed to avoid future errors (e.g., product_name_lenght to product_name_length).
@@ -84,10 +101,3 @@ IGNORE 1 ROWS
     - Any cells with empty strings or spaces are replaced with NaN values to standardize missing data handling.
    
     - To handle inconsistencies in city names (e.g., special characters in geolocation_city), city names are converted to their closest ASCII equivalents using unidecode, and duplicates are dropped based on geolocation_zip_code_prefix, geolocation_state, and geolocation_city.
-
-## Data Analysis
-_To be completed in future stages._
-
-## Recommendations
-- **```geolocation_city``` standardization**: A controlled vocabulary for city could reduce duplicates and discrepancies due to special characters.
-- **Database architecture**: If Olist’s website directly inputs this data to their database, implementing these data cleaning and normalization practices within the database could help maintain consistency and reliability in production.
