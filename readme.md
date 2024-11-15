@@ -10,12 +10,38 @@ This dashboard aggregates sales data, offering insights into key performance ind
 ![sales (1)_page-0001](https://github.com/user-attachments/assets/05919302-c2ae-4eff-aa43-c442e569ddb8)
 ![Untitled design](https://github.com/user-attachments/assets/456263b4-e170-418c-92f8-d6cefbd2baa4)
 
-## Recommendations
+## Summary of Insights
+### 1. Sales Overview
+- There was a significant spike in both orders and sales on November 24, 2017, corresponding to Brazil’s Black Friday, highlighting the strong impact of promotional events on Olist's performance.
+- This suggests that customers are highly responsive to sales events, with Black Friday being especially effective in driving demand.
+
+### 2. Customer Demographics
+- Most customers are located in major cities, including São Paulo, Rio de Janeiro, and Belo Horizonte, with these top 10 cities representing a significant portion of Olist’s customer base.
+- This indicates that Olist's reach is currently stronger in major urban centers compared to smaller towns or rural areas.
+
+### 3. Best-Selling Products
+- Product categories such as “Bed & Bath,” “Health & Beauty,” and “Sports & Leisure” lead in sales, showing customer preference for these types of products.
+
+### 4. Shopping Cart Overview
+- A high percentage (97%) of orders are completed, indicating effective logistics and customer satisfaction.
+Returns and cancellations are low at 0.6%, suggesting low customer dissatisfaction.
+- However, 2.3% of orders are pending, potentially indicating opportunities to improve processing or delivery speeds.
+
+### 5. Order and Sales Trends
+- There’s a consistent growth trend in orders over time, with noticeable sales and order spikes aligning, likely due to seasonal demand or targeted promotional activities.
+
+
+## Recommendations and Next Steps
+- **Annual Black Friday Campaigns and Key Shopping Holidays Planning**: Given the strong impact of Black Friday, Olist should incorporate this event as a central element of its annual sales strategy. Coordinating with Marketing and Inventory teams to plan well in advance—setting up promotions, ensuring stock of popular items, and boosting marketing efforts—could help replicate or surpass the 2017 performance.
+- - **Market Expansion**: Collaborate with the Logistics and Partnerships teams to assess distribution options and consider adjusting product offerings or forming partnerships with local businesses to facilitate this expansion. Since most customers are concentrated in major cities, Olist could explore strategies to reach smaller towns or rural areas.
+- **Targeted Promotions for High-Demand Categories**: Given the popularity of categories like “Health & Beauty” and “Bed & Bath,” Olist could boost sales by implementing seasonal promotions, bundling offers, or loyalty rewards in these areas. Collaborating with the Marketing team to develop exclusive offerings within these categories could attract more customers.
+- **Pending Order Resolution Improvement**: Engage with the Operations and Customer Service teams to investigate and address reasons behind pending orders, particularly during high-traffic periods. This could uncover process improvements that enhance customer satisfaction and reduce delays.
+- **Enhanced Customer Segmentation**: Use demographic data to refine customer segments and personalize marketing efforts. Work with the Marketing Analytics team to create targeted campaigns (e.g., promoting “Health & Beauty” products to younger demographics) to drive higher engagement and conversion rates.
+- **Promotional Strategy Analysis**: Analyze customer behavior from the 2017 Black Friday spike, focusing on top products, purchase timing, and average spend, to inform future promotional strategies. Collaborate with the Marketing teams to apply these insights for tailored promotions that maximize customer response.
 - **Data quality improvement**: Work with the Data Governance, Database Administrators, and Data Engineering teams to standardize ```geolocation_city data```, reducing duplicates and discrepancies. Implement data cleaning and normalization practices in the database architecture to enhance data accuracy and consistency.
 
 ## Future Updates
 This project will continue to evolve with the addition of deeper insights and recommendations based on ongoing data analysis. Future updates will focus on:
-- Analyzing seasonal trends in sales performance.
 - Evaluating the impact of customer feedback on sales.
 
 ## Technical Process
